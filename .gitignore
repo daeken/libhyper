@@ -1,4 +1,4 @@
-
 *.o
-
 *.dylib
+test/test
+test/test.dSYM
