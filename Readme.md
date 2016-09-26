@@ -10,6 +10,6 @@ Introduction
 Structure
 =========
 
-The current structure is a very rough, very preliminary wrapper around Hypervisor.framework -- this is a dead end.
+Libhyper will be based off on the KVM API.  This will be largely passed directly to KVM on Linux, and implemented on top of Hypervisor.framework/HAXM for OS X and Windows.  In `KVM Cloning.md` we have a list of KVM ioctls that would be useful to clone.
 
-Instead of this very low-level interface, libhyper will be based off on the KVM API.  This will be largely passed directly to KVM on Linux, and implemented on top of Hypervisor.framework/HAXM for OS X and Windows.  In `KVM Cloning.md` we have a list of KVM ioctls that would be useful to clone.
+This structure is being implemented using various relevant C++ classes.
