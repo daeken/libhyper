@@ -3,7 +3,7 @@
 #include <Hypervisor/hv.h>
 #include <Hypervisor/hv_vmx.h>
 
-#define VCPU_CLASS MacVCpu
+#define HYPERVISOR_CLASS MacHypervisor
 
 class MacVCpu : public VCpu {
 public:
@@ -19,4 +19,12 @@ private:
 	bool gprDirty[16];
 
 	hv_vcpuid_t pvcpu;
+};
+
+class MacHypervisor : public Hypervisor {
+public:
+	MacHypervisor();
+	~MacHypervisor();
+
+	VCpu *createVCpu();
 };

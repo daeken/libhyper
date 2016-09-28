@@ -46,9 +46,9 @@ protected:
 class Hypervisor {
 public:
 	Hypervisor();
-	~Hypervisor();
+	virtual ~Hypervisor();
 
-	VCpu *createVCpu();
+	virtual VCpu *createVCpu() = 0;
 
 protected:
 	list<VCpu *> cpus;
