@@ -6,10 +6,12 @@ PLATFORM_FLAGS :=
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
 	PLATFORM_FLAGS += -DLINUX
+	CPP_FILES += $(wildcard src/Linux/*.cpp)
 endif
 ifeq ($(UNAME_S),Darwin)
 	PLATFORM_FLAGS += -DMAC
 	LIBS += -framework Hypervisor
+	CPP_FILES += $(wildcard src/Mac/*.cpp)
 endif
 
 OBJ_FILES := $(CPP_FILES:.cpp=.o)
@@ -27,6 +29,6 @@ test: test/test.cpp libhyper.dylib
 
 clean:
 	rm src/*.o || true
-	rm src/platform/*.o || true
+	rm src/*/*.o || true
 	rm libhyper.dylib
 	rm test/test || true

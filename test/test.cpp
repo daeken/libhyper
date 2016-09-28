@@ -5,9 +5,12 @@
 int main() {
 	cout << "Starting test" << endl;
 
-	Hypervisor *hv = new Hypervisor();
+	auto hv = new Hypervisor();
+	auto vcpu0 = hv->createVCpu();
 
-	VCpu *cpu0 = hv->createVCpu();
+	cout << vcpu0->rax << endl;
+	vcpu0->rax = 15;
+	cout << vcpu0->rax << endl;
 
 	delete hv;
 

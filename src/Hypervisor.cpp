@@ -20,7 +20,7 @@ Hypervisor::~Hypervisor() {
 }
 
 VCpu *Hypervisor::createVCpu() {
-	auto vcpu = new VCpu(this);
+	auto vcpu = new VCPU_CLASS(this);
 	cpus.push_back(vcpu);
 	return vcpu;
 }
